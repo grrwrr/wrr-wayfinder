@@ -1,0 +1,6 @@
+{
+  "appTitle": "wrr_wayfinder",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
