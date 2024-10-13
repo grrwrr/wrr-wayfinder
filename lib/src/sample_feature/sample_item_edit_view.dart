@@ -1,11 +1,11 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 
-/// Displays detailed information about a SampleItem.
-class SampleItemDetailsView extends StatelessWidget {
-  const SampleItemDetailsView({super.key});
+/// Displays the edit view for a SampleItem.
+class SampleItemEditView extends StatelessWidget {
+  const SampleItemEditView({super.key});
 
-  static const routeName = '/sample_item';
+  static const routeName = '/sample_item_edit';
 
   @override
   Widget build(BuildContext context) {
