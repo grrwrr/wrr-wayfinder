@@ -1,7 +1,11 @@
-// Flutter imports:
+// Dart imports:
 import 'dart:developer';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_naver_map/flutter_naver_map.dart';
 
 // Project imports:
@@ -10,6 +14,8 @@ import 'src/settings/settings_controller.dart';
 import 'src/settings/settings_service.dart';
 
 void main() async {
+  await dotenv.load(fileName: ".env");
+
   // Set up the SettingsController, which will glue user settings to multiple
   // Flutter Widgets.
   final settingsController = SettingsController(SettingsService());
@@ -29,8 +35,11 @@ void main() async {
 
 Future<void> _initializeMap() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  final String? clientId = dotenv.env['NAVER_MAP_CLIENT_ID'];
+
   await NaverMapSdk.instance.initialize(
-      clientId: 'vl7qtjsqg7', // 클라이언트 ID 설정
+      clientId: clientId,
       onAuthFailed: (e) =>
           log("Naver Map authentication error: $e", name: "onAuthFailed"));
 }

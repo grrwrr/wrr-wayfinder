@@ -1,8 +1,11 @@
-// Flutter imports:
+// Dart imports:
 import 'dart:async';
 import 'dart:developer';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_naver_map/flutter_naver_map.dart';
 
 /// Displays detailed information about a SampleItem.
